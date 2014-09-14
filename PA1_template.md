@@ -1,9 +1,4 @@
----
-title: "Reproducible Research: Peer Assessment 1"
-output: 
-  html_document:
-    keep_md: true
----
+# Reproducible Research: Peer Assessment 1
 
 I've tried to finish the assignment, but only had enough time and skills to tackle on the first three objectives.
 
@@ -11,7 +6,8 @@ I've tried to finish the assignment, but only had enough time and skills to tack
 
 Have the activity.csv extracted from the .zip before proceeding.
 
-```{r Loading_Data, echo=TRUE}
+
+```r
 activity <- read.csv("activity.csv",stringsAsFactors = FALSE)
 ```
 
@@ -20,23 +16,42 @@ activity <- read.csv("activity.csv",stringsAsFactors = FALSE)
 
 This is a histogram of the total number of steps taken per day.
 
-```{r Making_Histograms,echo=TRUE}
+
+```r
 a <- tapply(activity$steps,activity$date,sum, na.rm=TRUE)
 hist(a,main="Total Number of Steps per Day",xlab = "Total Steps")
+```
+
+![plot of chunk Making_Histograms](./PA1_template_files/figure-html/Making_Histograms.png) 
+
+```r
 #hist(a)
 ```
 
 The mean and median are reported below.
 
-```{r Mean and Median of Total Number of Steps, echo=TRUE}
+
+```r
 mean(a)
+```
+
+```
+## [1] 9354
+```
+
+```r
 median(a)
+```
+
+```
+## [1] 10395
 ```
 
 
 ## What is the average daily activity pattern?
 
-```{r Avg_Daily_Activity, echo=TRUE}
+
+```r
 a <- tapply(activity$steps,activity$interval,mean, na.rm=TRUE)
 answer = as.data.frame(as.table(a)) 
 colnames(answer) <- c("Interval","AvgSteps")
@@ -46,11 +61,19 @@ avg_steps <- as.numeric(answer$AvgSteps)
 plot(time_interval,avg_steps,type="l", ylab ="Average Number of Steps", xlab="")
 ```
 
+![plot of chunk Avg_Daily_Activity](./PA1_template_files/figure-html/Avg_Daily_Activity.png) 
+
 For part 2, which contains max step?
 
-```{r echo=TRUE}
+
+```r
 maxSteps <- max(answer$AvgSteps)
 answer[answer$AvgSteps == maxSteps,]
+```
+
+```
+##     Interval AvgSteps
+## 104      835    206.2
 ```
 
 Interval 835 has the most steps with Avg of 206 steps
