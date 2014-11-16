@@ -11,6 +11,7 @@ activity <- read.csv("activity.csv",stringsAsFactors = FALSE)
 ```
 
 
+
 ## What is mean total number of steps taken per day?
 
 This is a histogram of the total number of steps taken per day.
