@@ -11,7 +11,6 @@ activity <- read.csv("activity.csv",stringsAsFactors = FALSE)
 ```
 
 
-
 ## What is mean total number of steps taken per day?
 
 This is a histogram of the total number of steps taken per day.
@@ -67,7 +66,7 @@ plot(answer$Interval,answer$AvgSteps,type="l", ylab ="Average Number of Steps", 
 
 ![plot of chunk Avg_Daily_Activity](./PA1_template_files/figure-html/Avg_Daily_Activity.png) 
 
-For part 2, which contains max step?
+For part 2, which interval contains max step?
 
 
 ```r
