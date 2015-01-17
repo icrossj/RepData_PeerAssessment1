@@ -166,4 +166,4 @@ plot(answer_weekend$Interval,answer_weekend$AvgSteps,type="l", ylab ="Average Nu
 ```
 
 
-Yes, there seems to be more activity on the weekends than the weekdays.
+Yes, there seems to be more activity on the weekends than the weekdays. Perhaps people go out to do recreation on those days.

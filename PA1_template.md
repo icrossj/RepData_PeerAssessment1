@@ -21,7 +21,7 @@ a <- tapply(activity$steps,activity$date,sum, na.rm=TRUE)
 hist(a,main="Total Number of Steps per Day",xlab = "Total Steps")
 ```
 
-![plot of chunk Making_Histograms](./PA1_template_files/figure-html/Making_Histograms.png) 
+![](PA1_template_files/figure-html/Making_Histograms-1.png) 
 
 ```r
 #hist(a)
@@ -35,7 +35,7 @@ mean(a)
 ```
 
 ```
-## [1] 9354
+## [1] 9354.23
 ```
 
 ```r
@@ -64,7 +64,7 @@ answer$AvgSteps <- as.numeric(answer$AvgSteps)
 plot(answer$Interval,answer$AvgSteps,type="l", ylab ="Average Number of Steps", xlab="", main="Average Daily Pattern")
 ```
 
-![plot of chunk Avg_Daily_Activity](./PA1_template_files/figure-html/Avg_Daily_Activity.png) 
+![](PA1_template_files/figure-html/Avg_Daily_Activity-1.png) 
 
 For part 2, which interval contains max step?
 
@@ -76,7 +76,7 @@ answer[answer$AvgSteps == maxSteps,]
 
 ```
 ##     Interval AvgSteps
-## 104      835    206.2
+## 104      835 206.1698
 ```
 
 Interval 835 has the most steps with Avg of 206 steps
@@ -132,7 +132,7 @@ a_new <- tapply(activity_new$activity_new_steps,activity_new$date,sum, na.rm=TRU
 hist(a_new,main="Total Number of Steps per Day",xlab = "Total Steps")
 ```
 
-![plot of chunk Impute_missing_values](./PA1_template_files/figure-html/Impute_missing_values.png) 
+![](PA1_template_files/figure-html/Impute_missing_values-1.png) 
 
 ```r
 #hist(a)
@@ -148,7 +148,7 @@ mean(a_new)
 ```
 
 ```
-## [1] 10766
+## [1] 10766.19
 ```
 
 ```r
@@ -156,7 +156,7 @@ median(a_new)
 ```
 
 ```
-## [1] 10766
+## [1] 10766.19
 ```
 
 
@@ -205,7 +205,7 @@ answer_weekend$AvgSteps <- as.numeric(answer_weekend$AvgSteps)
 plot(answer_weekend$Interval,answer_weekend$AvgSteps,type="l", ylab ="Average Number of Steps", xlab="", main="Weekend Mean Steps")
 ```
 
-![plot of chunk Differences_in_Weekdays_and_Weekends](./PA1_template_files/figure-html/Differences_in_Weekdays_and_Weekends.png) 
+![](PA1_template_files/figure-html/Differences_in_Weekdays_and_Weekends-1.png) 
 
 
-Yes, there seems to be more activity on the weekends than the weekdays.
+Yes, there seems to be more activity on the weekends than the weekdays. Perhaps people go out to do recreation on those days.
